@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+    <h1 mat-dialog-title>{{ action === 'Edit' ? 'Edit Actor' : 'Add Actor' }}</h1>
+    <div mat-dialog-content>
+      <div class="popup-container">
+        <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" formControlName="first_name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" formControlName="last_name" required>
+          </div>
+
+          <div class="button-group">
+            <button type="submit">{{ action }}</button>
+            <button type="button" (click)="closePopup()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="datacity" class="mat-elevation-z8">
+  
+      <!-- Column definitions -->
+      <ng-container matColumnDef="city_id">
+        <th mat-header-cell *matHeaderCellDef> City ID </th>
+        <td mat-cell *matCellDef="let cities"> {{ cities.city_id }} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let cities"> {{ cities.city }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="last_update">
+        <th mat-header-cell *matHeaderCellDef> Last Update </th>
+        <td mat-cell *matCellDef="let cities"> {{ cities.last_update }} </td>
+      </ng-container>
+    
+      <!-- Table rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
